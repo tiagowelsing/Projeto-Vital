@@ -1,8 +1,8 @@
-from cardapio import Cardapio   
+from cardapio import CardapioGUI   
 
 
 def main():
-    sistema = Cardapio()       
+    sistema = CardapioGUI()       
 
     while True:
         sistema.mostrar_cardapio()
