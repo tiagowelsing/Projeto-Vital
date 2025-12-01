@@ -1,7 +1,7 @@
 from cardapio import Cardapio
 
 class Main:
-    def _init_(self):
+    def __init__(self):
         self.sistema = Cardapio()
 
     def executar(self):
@@ -22,6 +22,6 @@ class Main:
             else:
                 print("Opção inválida! Tente novamente.")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app = Main()
     app.executar()
