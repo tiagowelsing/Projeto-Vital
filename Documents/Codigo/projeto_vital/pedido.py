@@ -2,7 +2,7 @@ import sys
 from collections import Counter
 
 class Pedido:
-    def _init_(self):
+    def __init__(self):
         self.itens = []
 
     def adicionar(self, item):
