@@ -33,6 +33,7 @@ class Cardapio:
                 break
             elif op == "5":
                 self.pedido.mostrar_pedido()
+                return
             else:
                 print("Opção inválida.")
                 continue
@@ -62,6 +63,7 @@ class Cardapio:
                 break
             elif op == "5":
                 self.pedido.mostrar_pedido()
+                return
             else:
                 print("Opção inválida.")
                 continue
@@ -100,6 +102,7 @@ class Cardapio:
                 break
             elif op == "8":
                 self.pedido.mostrar_pedido()
+                return
             else:
                 print("Opção inválida.")
                 continue
