@@ -1,4 +1,3 @@
-import sys
 from collections import Counter
 
 class Pedido:
@@ -8,14 +7,13 @@ class Pedido:
     def adicionar(self, item):
         self.itens.append(item)
 
-    def mostrar_pedido(self):
-        print("\n===== Resumo do pedido =====")
+    def resumo(self):
         if not self.itens:
-            print("Você não realizou um pedido.")
-        else:
-            contagem = Counter(self.itens)
-            for item, qtd in contagem.items():
-                print(f"- {qtd}x {item}")
+            return "Você não realizou um pedido."
 
-        print("\nAté breve!")
-        sys.exit()
+        contagem = Counter(self.itens)
+        texto = "===== Resumo do Pedido =====\n"
+        for item, qtd in contagem.items():
+            texto += f"- {qtd}x {item}\n"
+
+        return texto
