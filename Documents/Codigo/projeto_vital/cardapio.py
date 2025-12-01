@@ -99,11 +99,11 @@ class Cardapio():
         print("\n--- Bebidas ---")        
         print("1. Soda italiana de limão")        
         print("2. Soda italiana de morango")        
-        print("3. Soda italian")        
+        print("3. Soda italiana de maracujá") 
+        print("4. Refrigerante lata") 
+        print("5. Água mineral")       
         print("6. Água com gás")        
-        print("7. Voltar ao ca de maracujá")        
-        print("4. Refrigerante lata")        
-        print("5. Água mineralardápio")        
+        print("7. Voltar ao cardápio")        
         print("8. Encerrar atendimento")        
     
 
