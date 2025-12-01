@@ -1,27 +1,27 @@
-from cardapio import Cardapio   
+from cardapio import Cardapio
 
+class Main:
+    def _init_(self):
+        self.sistema = Cardapio()
 
-def main():
-    sistema = Cardapio()       
+    def executar(self):
+        while True:
+            self.sistema.mostrar_cardapio()
 
-    while True:
-        sistema.mostrar_cardapio()
-        
-        opcao = input("\nEscolha uma opção: ")
+            opcao = input("Escolha uma opção: ")
 
-        if opcao == "1":
-            sistema.entradas()
-        elif opcao == "2":
-            sistema.massas()
-        elif opcao == "3":
-            sistema.bebidas()
-        elif opcao == "4":
-            sistema.pedido.mostrar_pedido()
-        elif opcao == "5":
-            print("Saindo...")
-            break
-        else:
-            print("Opção inválida.")    
+            if opcao == "1":
+                self.sistema.entradas()
+            elif opcao == "2":
+                self.sistema.massas()
+            elif opcao == "3":
+                self.sistema.bebidas()
+            elif opcao == "4":
+                print("\nEncerrando atendimento...")
+                self.sistema.pedido.mostrar_pedido()
+            else:
+                print("Opção inválida! Tente novamente.")
 
-if __name__ == "__main__":
-    main()
+if _name_ == "_main_":
+    app = Main()
+    app.executar()
