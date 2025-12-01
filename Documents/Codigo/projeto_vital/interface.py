@@ -1,26 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
-from collections import Counter
 
-
-class Pedido:
-    def __init__(self):
-        self.itens = []
-
-    def adicionar(self, item):
-        self.itens.append(item)
-
-    def resumo(self):
-        if not self.itens:
-            return "Você não realizou um pedido."
-
-        contagem = Counter(self.itens)
-        texto = "===== Resumo do Pedido =====\n"
-        for item, qtd in contagem.items():
-            texto += f"- {qtd}x {item}\n"
-
-        return texto
-
+from pedido import Pedido
+from cardapio import Cardapio
 
 class InterfaceCardapio:
     def __init__(self, root):
@@ -55,28 +37,13 @@ class InterfaceCardapio:
                       command=lambda nome=item: self.adicionar_item(nome)).pack(pady=5)
 
     def janela_entradas(self):
-        self.janela_generica("Entradas", [
-            "Pizza branca",
-            "Palitos de queijo",
-            "Bolinha de queijo"
-        ])
+        self.janela_generica("Entradas", Cardapio.ENTRADAS)
 
     def janela_massas(self):
-        self.janela_generica("Massas", [
-            "Pizza",
-            "Lasanha",
-            "Macarrão"
-        ])
+        self.janela_generica("Massas", Cardapio.MASSAS)
 
     def janela_bebidas(self):
-        self.janela_generica("Bebidas", [
-            "Soda limão",
-            "Soda morango",
-            "Soda maracujá",
-            "Refrigerante lata",
-            "Água mineral",
-            "Água com gás"
-        ])
+        self.janela_generica("Bebidas", Cardapio.BEBIDAS)
 
     # --------------------------
     # FUNÇÕES PRINCIPAIS
@@ -89,12 +56,3 @@ class InterfaceCardapio:
     def finalizar(self):
         texto = self.pedido.resumo()
         messagebox.showinfo("Resumo do Pedido", texto)
-
-
-# --------------------------
-# INICIAR A APLICAÇÃO
-# --------------------------
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = InterfaceCardapio(root)
-    root.mainloop()
